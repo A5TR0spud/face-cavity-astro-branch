@@ -1,0 +1,22 @@
+{
+  "itemGroup.facecavity.organs": "Head Organs",
+
+  "item.facecavity.face_opener": "Face Opener",
+  "item.facecavity.brain": "Brain",
+  "item.facecavity.eye": "Eye",
+  "item.facecavity.tongue": "Tongue",
+  "item.facecavity.skull_plate": "Skull Plate",
+  "item.facecavity.tooth": "Teeth",
+  "item.facecavity.ear_drum": "Ear Drum",
+  "item.facecavity.jaw_muscle": "Jaw Muscle",
+
+  "organscore.facecavity.sight": "%sSight",
+  "organscore.facecavity.chew_speed": "%sBite Strength",
+  "organscore.facecavity.carnivorous_bite_speed": "%sCarnivorous Chew Speed",
+  "organscore.facecavity.herbivorous_bite_speed": "%sHerbivorous Chew Speed",
+  "organscore.facecavity.human_chat": "Human Speaking",
+  "organscore.facecavity.human_chat_hearing": "Human Chat Hearing",
+  "organscore.facecavity.hearing": "%sHearing",
+  "organscore.facecavity.human_brain": "Human Brain",
+  "organscore.facecavity.head_defense": "%sHead Defense"
+}

@@ -1,0 +1,7 @@
+{
+  "itemID": "facecavity:ear_drum",
+  "organScores": [
+    {"id":"facecavity:human_chat_hearing","value": "1"},
+    {"id":"facecavity:hearing","value": "1"}
+  ]
+}

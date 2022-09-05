@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "facecavity",
+  "version": "${version}",
+
+  "name": "Face Cavity",
+  "description": "An alternate mod for Chest Cavity, with implementation",
+  "authors": [
+    "Ecorous",
+    "A5TR0spud",
+    "GreenTriangle",
+    "TigerofTroy"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/facecavity/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.tigereye.facecavity.FaceCavity"
+    ]
+  },
+  "mixins": [
+    "facecavity.mixins.json"
+  ],
+
+  "depends": {
+    "chestcavity": ">=2.16.3",
+    "fabricloader": ">=0.14.6",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  }
+}

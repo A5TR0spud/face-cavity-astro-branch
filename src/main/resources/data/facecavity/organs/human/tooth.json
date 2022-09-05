@@ -1,0 +1,7 @@
+{
+  "itemID": "facecavity:tooth",
+  "organScores": [
+    {"id":"facecavity:herbivorous_bite_speed","value": "1"},
+    {"id":"facecavity:carnivorous_bite_speed","value": "1"}
+  ]
+}
