@@ -1,4 +1,4 @@
-package io.github.facecavity.registration;
+package net.tigereye.facecavity.registration;
 
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;

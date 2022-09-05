@@ -1,6 +1,6 @@
-package io.github.facecavity.registration;
+package net.tigereye.facecavity.registration;
 
-import io.github.facecavity.FaceCavity;
+import net.tigereye.facecavity.FaceCavity;
 import net.minecraft.util.Identifier;
 
 public class FCOrganScores {

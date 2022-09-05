@@ -1,4 +1,4 @@
-package io.github.facecavity.mixin;
+package net.tigereye.facecavity.mixin;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.MinecraftClient;

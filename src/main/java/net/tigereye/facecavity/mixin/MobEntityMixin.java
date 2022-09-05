@@ -1,12 +1,12 @@
-package io.github.facecavity.mixin;
+package net.tigereye.facecavity.mixin;
 
-import io.github.facecavity.registration.FCItems;
+import net.tigereye.facecavity.registration.FCItems;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import io.github.facecavity.items.FaceOpenerItem;
+import net.tigereye.facecavity.items.FaceOpenerItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
