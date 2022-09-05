@@ -1,6 +1,7 @@
 package io.github.facecavity.registration;
 
 import io.github.facecavity.FaceCavity;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -36,19 +37,19 @@ public class FCItems {
      public static Item FACE_OPENER = new FaceOpenerItem();
 
 
-     public static Item BRAIN = new BrainItem(FaceCavity.DEFAULT_ORGAN_SETTINGS.food(FCFoodComponents.HUMAN_BRAIN_FOOD_COMPONENT));
+     public static Item BRAIN = new BrainItem(new FabricItemSettings().maxCount(1).group(FaceCavity.ORGAN_ITEM_GROUP).food(FCFoodComponents.HUMAN_BRAIN_FOOD_COMPONENT));
 
-     public static Item EYE = new Item(FaceCavity.DEFAULT_ORGAN_SETTINGS.food(CCFoodComponents.HUMAN_MUSCLE_FOOD_COMPONENT));
+     public static Item EYE = new Item(new FabricItemSettings().maxCount(1).group(FaceCavity.ORGAN_ITEM_GROUP).food(CCFoodComponents.HUMAN_MUSCLE_FOOD_COMPONENT));
 
-     public static Item TONGUE = new Item(FaceCavity.DEFAULT_ORGAN_SETTINGS.food(CCFoodComponents.HUMAN_MUSCLE_FOOD_COMPONENT));
+     public static Item TONGUE = new Item(new FabricItemSettings().maxCount(1).group(FaceCavity.ORGAN_ITEM_GROUP).food(CCFoodComponents.HUMAN_MUSCLE_FOOD_COMPONENT));
 
-     public static Item SKULL_PLATE = new Item(FaceCavity.DEFAULT_ORGAN_SETTINGS.maxCount(4));
+     public static Item SKULL_PLATE = new Item(new FabricItemSettings().maxCount(4).group(FaceCavity.ORGAN_ITEM_GROUP));
 
-     public static Item TOOTH = new Item(FaceCavity.DEFAULT_ORGAN_SETTINGS.maxCount(4));
+     public static Item TOOTH = new Item(new FabricItemSettings().maxCount(4).group(FaceCavity.ORGAN_ITEM_GROUP));
 
-     public static Item EAR_DRUM = new Item(FaceCavity.DEFAULT_ORGAN_SETTINGS);
+     public static Item EAR_DRUM = new Item(new FabricItemSettings().maxCount(1).group(FaceCavity.ORGAN_ITEM_GROUP));
 
-     public static Item JAW_MUSCLE = new Item(FaceCavity.DEFAULT_ORGAN_SETTINGS.maxCount(8).food(CCFoodComponents.HUMAN_MUSCLE_FOOD_COMPONENT));
+     public static Item JAW_MUSCLE = new Item(new FabricItemSettings().maxCount(8).group(FaceCavity.ORGAN_ITEM_GROUP).food(CCFoodComponents.HUMAN_MUSCLE_FOOD_COMPONENT));
 
      public static void registerItem(Item ITEM, String id) {
         Registry.register(Registry.ITEM, new Identifier("facecavity", id), ITEM);
