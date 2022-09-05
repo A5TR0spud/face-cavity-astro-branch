@@ -1,7 +1,7 @@
-package net.tigereye.facecavity.registration;
+package io.github.facecavity.registration;
 
+import io.github.facecavity.FaceCavity;
 import net.minecraft.util.Identifier;
-import net.tigereye.facecavity.FaceCavity;
 
 public class FCOrganScores {
     public static final Identifier SIGHT = new Identifier(FaceCavity.MODID, "sight");

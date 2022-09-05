@@ -1,4 +1,4 @@
-package net.tigereye.facecavity.items;
+package io.github.facecavity.items;
 
 import ladysnake.requiem.api.v1.possession.PossessionComponent;
 import net.minecraft.entity.EquipmentSlot;
