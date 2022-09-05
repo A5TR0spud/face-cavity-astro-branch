@@ -8,6 +8,7 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.recipebook.ClientRecipeBook;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.encryption.PlayerPublicKey;
 import net.minecraft.network.encryption.Signer;
 import net.minecraft.network.message.ChatMessageSigner;
@@ -47,7 +48,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {
         if (player instanceof ChestCavityEntity ccE) {
             if (0 >= ccE.getChestCavityInstance().getOrganScore(new Identifier("facecavity", "human_chat"))) {
                 MessageSignature messageSignature;
-                String[] randomNoises = {":(", "", "h", "?", "!", "uo", "", "ah", "", "uh", "", " ", "*", "eo", "", "$"};
+                String[] randomNoises = {":(", "h", "?", "!", "uo", "ah", "uh", " ", "*", "eo", "$", "phf"};
                 StringBuilder message3 = new StringBuilder();
                 String message;
                 if (random.nextFloat() > 0.995) {
