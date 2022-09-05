@@ -22,7 +22,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.tigereye.facecavity.FaceCavity"
+      "io.github.facecavity.FaceCavity"
     ]
   },
   "mixins": [
@@ -33,7 +33,7 @@
     "chestcavity": ">=2.16.3",
     "fabricloader": ">=0.14.6",
     "fabric": "*",
-    "minecraft": "~1.19",
+    "minecraft": "1.19",
     "java": ">=17"
   }
 }
