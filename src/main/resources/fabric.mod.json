@@ -22,7 +22,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.facecavity.FaceCavity"
+      "net.tigereye.facecavity.FaceCavity"
     ]
   },
   "mixins": [
