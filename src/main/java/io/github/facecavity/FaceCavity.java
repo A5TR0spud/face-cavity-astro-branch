@@ -3,6 +3,7 @@ package io.github.facecavity;
 import io.github.facecavity.registration.FCItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -17,6 +18,7 @@ public class FaceCavity implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("facecavity");
 	public static final String MODID = "facecavity";
+	public static FabricItemSettings DEFAULT_ORGAN_SETTINGS = new FabricItemSettings().maxCount(1).group(FaceCavity.ORGAN_ITEM_GROUP);
 
 
 	public static final ItemGroup ORGAN_ITEM_GROUP = FabricItemGroupBuilder.build(

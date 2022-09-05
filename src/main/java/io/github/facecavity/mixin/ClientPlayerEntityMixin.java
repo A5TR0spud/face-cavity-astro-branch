@@ -40,6 +40,18 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {
         super(world, profile, publicKey);
     }
 
+    public String removeTonuge(String original) {
+        String o = original;
+        String[] unableCharacters = {"t", "d", "p", "n", "g", "k", "q", "j", "b"};
+        for (String charac : unableCharacters) {
+            if (original.contains(charac)) {
+                o = o.replaceAll(charac, "'");
+            } else if (original.contains("l")) {
+                o = o.replaceAll("l", "w");
+            }
+        }
+        return o;
+    }
     @Inject(at = @At(value = "HEAD"), method = "sendChatMessagePacket", cancellable = true)
     private void sendChatMessagePacket(ChatMessageSigner signer, String message1, @Nullable Text preview, CallbackInfo cir) {
         ClientPlayerEntity client = (ClientPlayerEntity) (Object) this;
@@ -48,16 +60,18 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {
             if (0 >= ccE.getChestCavityInstance().getOrganScore(new Identifier("facecavity", "human_chat"))) {
                 MessageSignature messageSignature;
                 String[] randomNoises = {":(", "", "h", "?", "!", "uo", "", "ah", "", "uh", "", " ", "*", "eo", "", "$"};
+
                 StringBuilder message3 = new StringBuilder();
                 String message;
                 if (random.nextFloat() > 0.995) {
-                    message = "Hewwo! I am a' idiot. I am 'rying to s'eak, bu' I have 'o 'ongue. There is a 0.5% 'hance hor 'his 'essa'e to a'ear, wucky us! Have a 'rea' 'ay!";
+                    String original = "Hello! I am an idiot. I am trying to speak, but I have no tongue. There is a 0.5% chance for this message to appear, lucky us! Have a great day!";
+                    message = removeTonuge(original);
                 } else {
                     for (int i = 0; i < message1.toCharArray().length; i++) {
                         int r = random.nextInt(randomNoises.length);
                         message3.append(randomNoises[r]);
                     }
-                    message = message3.toString();
+                    message = removeTonuge(message1);
                 }
 
                 if (preview != null) {

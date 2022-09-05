@@ -1,11 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.tigereye.facecavity.mixin",
+  "package": "io.github.facecavity.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "io.github.facecavity.mixin.MobEntityMixin",
-    "io.github.facecavity.mixin.ClientPlayerEntityMixin"
+    "MobEntityMixin",
+    "ClientPlayerEntityMixin"
   ],
   "client": [
   ],

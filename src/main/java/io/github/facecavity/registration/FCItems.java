@@ -1,5 +1,6 @@
 package io.github.facecavity.registration;
 
+import io.github.facecavity.FaceCavity;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -35,19 +36,19 @@ public class FCItems {
      public static Item FACE_OPENER = new FaceOpenerItem();
 
 
-     public static Item BRAIN = new BrainItem(new OrganSettings().food(FCFoodComponents.HUMAN_BRAIN_FOOD_COMPONENT));
+     public static Item BRAIN = new BrainItem(FaceCavity.DEFAULT_ORGAN_SETTINGS.food(FCFoodComponents.HUMAN_BRAIN_FOOD_COMPONENT));
 
-     public static Item EYE = new Item(new OrganSettings().food(CCFoodComponents.HUMAN_MUSCLE_FOOD_COMPONENT));
+     public static Item EYE = new Item(FaceCavity.DEFAULT_ORGAN_SETTINGS.food(CCFoodComponents.HUMAN_MUSCLE_FOOD_COMPONENT));
 
-     public static Item TONGUE = new Item(new OrganSettings().food(CCFoodComponents.HUMAN_MUSCLE_FOOD_COMPONENT));
+     public static Item TONGUE = new Item(FaceCavity.DEFAULT_ORGAN_SETTINGS.food(CCFoodComponents.HUMAN_MUSCLE_FOOD_COMPONENT));
 
-     public static Item SKULL_PLATE = new Item(new OrganSettings().maxCount(4));
+     public static Item SKULL_PLATE = new Item(FaceCavity.DEFAULT_ORGAN_SETTINGS.maxCount(4));
 
-     public static Item TOOTH = new Item(new OrganSettings().maxCount(4));
+     public static Item TOOTH = new Item(FaceCavity.DEFAULT_ORGAN_SETTINGS.maxCount(4));
 
-     public static Item EAR_DRUM = new Item(new OrganSettings());
+     public static Item EAR_DRUM = new Item(FaceCavity.DEFAULT_ORGAN_SETTINGS);
 
-     public static Item JAW_MUSCLE = new Item(new OrganSettings().maxCount(8).food(CCFoodComponents.HUMAN_MUSCLE_FOOD_COMPONENT));
+     public static Item JAW_MUSCLE = new Item(FaceCavity.DEFAULT_ORGAN_SETTINGS.maxCount(8).food(CCFoodComponents.HUMAN_MUSCLE_FOOD_COMPONENT));
 
      public static void registerItem(Item ITEM, String id) {
         Registry.register(Registry.ITEM, new Identifier("facecavity", id), ITEM);
