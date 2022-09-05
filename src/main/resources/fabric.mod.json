@@ -4,16 +4,15 @@
   "version": "${version}",
 
   "name": "Face Cavity",
-  "description": "An alternate mod for Chest Cavity, with implementation",
+  "description": "Even Safer Extra Storage",
   "authors": [
     "Ecorous",
     "A5TR0spud",
     "GreenTriangle",
-    "TigerofTroy"
+    "TigerOfTroy (Chest Cavity)"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/facecavity/face-cavity"
   },
 
   "license": "CC0-1.0",
