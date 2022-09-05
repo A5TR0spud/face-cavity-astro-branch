@@ -19,6 +19,7 @@ public class FaceCavity implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("facecavity");
 	public static final String MODID = "facecavity";
 
+
 	public static final ItemGroup ORGAN_ITEM_GROUP = FabricItemGroupBuilder.build(
 			new Identifier(MODID, "organs"),
 			() -> new ItemStack(FCItems.BRAIN));
@@ -27,19 +28,19 @@ public class FaceCavity implements ModInitializer {
 	public void onInitialize() {
 		LOGGER.info("Face Cavity has started loading!");
 		if (ChestCavity.config != null) {
-			LOGGER.info("Chest Cavity's has detected Chest Cavity's config!");
+			LOGGER.info("Face Cavity has detected Chest Cavity's config!");
 			init();
 		} else {
 			LOGGER.warn("Face Cavity has not detected Chest Cavity's config...");
 			ChestCavity.config = new CCConfig();
-			LOGGER.info("Face Cavity has created a dummy config to prevent errors");
+			LOGGER.warn("Face Cavity has created a dummy config to prevent errors");
 			init();
 		}
 	}
 
 	private void init() {
 		LOGGER.info("Face Cavity has started loading!");
-		FCItems.RegisterFaceCavityItems();
+		FCItems.register();
 		LOGGER.info("Face Cavity has finished loading!");
 	}
 }

@@ -51,7 +51,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {
                 StringBuilder message3 = new StringBuilder();
                 String message;
                 if (random.nextFloat() > 0.995) {
-                    message = "Hello! I am an idiot. I am trying to speak, but I have no tongue. There is a 0.5% chance for this message to appear, lucky us! Have a great day!";
+                    message = "Hewwo! I am a' idiot. I am 'rying to s'eak, bu' I have 'o 'ongue. There is a 0.5% 'hance hor 'his 'essa'e to a'ear, wucky us! Have a 'rea' 'ay!";
                 } else {
                     for (int i = 0; i < message1.toCharArray().length; i++) {
                         int r = random.nextInt(randomNoises.length);
