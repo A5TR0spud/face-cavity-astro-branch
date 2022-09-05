@@ -1,17 +1,12 @@
-package net.tigereye.facecavity.registration;
+package io.github.facecavity.registration;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.tigereye.chestcavity.registration.CCFoodComponents;
-import net.tigereye.facecavity.FaceCavity;
-import net.tigereye.facecavity.OrganSettings;
-import net.tigereye.facecavity.items.BrainItem;
-import net.tigereye.facecavity.items.FaceOpenerItem;
-
-import java.util.ArrayList;
-import java.util.List;
+import io.github.facecavity.OrganSettings;
+import io.github.facecavity.items.BrainItem;
+import io.github.facecavity.items.FaceOpenerItem;
 
 public class FCItems {
     /*public static Item FACE_OPENER = registerItem("face_opener", new FaceOpenerItem());

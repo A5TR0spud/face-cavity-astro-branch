@@ -1,4 +1,4 @@
-package net.tigereye.facecavity.items;
+package io.github.facecavity.items;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

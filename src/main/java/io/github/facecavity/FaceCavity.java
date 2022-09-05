@@ -1,6 +1,6 @@
-package net.tigereye.facecavity;
+package io.github.facecavity;
 
-import me.shedaniel.autoconfig.AutoConfig;
+import io.github.facecavity.registration.FCItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
@@ -8,7 +8,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.tigereye.chestcavity.ChestCavity;
 import net.tigereye.chestcavity.config.CCConfig;
-import net.tigereye.facecavity.registration.FCItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

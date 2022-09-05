@@ -1,4 +1,4 @@
-package net.tigereye.facecavity;
+package io.github.facecavity;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 
