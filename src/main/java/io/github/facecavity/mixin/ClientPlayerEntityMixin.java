@@ -41,15 +41,13 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {
     }
 
     public String removeTonuge(String original) {
-        String o = original;
+        String o = original.toLowerCase();
         String[] unableCharacters = {"t", "d", "p", "n", "g", "k", "q", "j", "b"};
         for (String charac : unableCharacters) {
-            if (original.contains(charac)) {
-                o = o.replaceAll(charac, "'");
-            } else if (original.contains("l")) {
-                o = o.replaceAll("l", "w");
-            }
+            o=o.replaceAll(charac, "*tounge noises*");
+            o=o.replaceAll("l", "w");
         }
+        System.out.println("Out: " + o);
         return o;
     }
     @Inject(at = @At(value = "HEAD"), method = "sendChatMessagePacket", cancellable = true)
@@ -72,6 +70,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {
                         message3.append(randomNoises[r]);
                     }
                     message = removeTonuge(message1);
+                    preview = Text.literal(message);
                 }
 
                 if (preview != null) {
