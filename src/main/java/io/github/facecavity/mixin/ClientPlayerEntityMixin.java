@@ -1,13 +1,13 @@
 package io.github.facecavity.mixin;
 
 import com.mojang.authlib.GameProfile;
+import io.github.facecavity.util.ChatUtils;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.recipebook.ClientRecipeBook;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.encryption.PlayerPublicKey;
 import net.minecraft.network.encryption.Signer;
@@ -24,9 +24,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static net.minecraft.client.network.ClientPlayerEntity.field_39078;
 
 @Mixin(ClientPlayerEntity.class)
@@ -41,14 +38,6 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {
         super(world, profile, publicKey);
     }
 
-    public String removeTonuge(String original) {
-
-        String[] unableCharacters = {"t", "T", "d", "D", "p", "P", "n", "N", "g", "G", "k", "K", "q", "Q", "j", "J", "b", "B"};
-        for (String c : unableCharacters) {
-            original = original.replaceAll(c, "...");
-        }
-        return original;
-    }
     @Inject(at = @At(value = "HEAD"), method = "sendChatMessagePacket", cancellable = true)
     private void sendChatMessagePacket(ChatMessageSigner signer, String message1, @Nullable Text preview, CallbackInfo cir) {
         ClientPlayerEntity client = (ClientPlayerEntity) (Object) this;
@@ -56,19 +45,13 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {
         if (player instanceof ChestCavityEntity ccE) {
             if (0 >= ccE.getChestCavityInstance().getOrganScore(new Identifier("facecavity", "human_chat"))) {
                 MessageSignature messageSignature;
-                String[] randomNoises = {":(", "", "h", "?", "!", "uo", "", "ah", "", "uh", "", " ", "*", "eo", "", "$"};
 
-                StringBuilder message3 = new StringBuilder();
                 String message;
-                if (random.nextFloat() > 0.995) {
-                    String original = "Hello! I am an idiot. I am trying to speak, but I have no tongue. There is a 0.5% chance for this message to appear, lucky us! Have a great day!";
-                    message = removeTonuge(original);
+                if (random.nextFloat() >= 0.995) { //0.995
+                    message1 = "Hello! I am an idiot. I am trying to speak, but I have no tongue. There is a 0.5% chance for this message to appear, lucky us! Have a great day!";
+                    message = ChatUtils.noTongueSend(message1);
                 } else {
-                    for (int i = 0; i < message1.toCharArray().length; i++) {
-                        int r = random.nextInt(randomNoises.length);
-                        message3.append(randomNoises[r]);
-                    }
-                    message = removeTonuge(message1);
+                    message = ChatUtils.noTongueSend(message1);
                     preview = Text.literal(message);
                 }
 
