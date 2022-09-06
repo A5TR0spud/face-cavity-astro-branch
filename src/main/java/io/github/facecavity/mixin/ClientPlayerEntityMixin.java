@@ -7,6 +7,7 @@ import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.recipebook.ClientRecipeBook;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.encryption.PlayerPublicKey;
 import net.minecraft.network.encryption.Signer;
@@ -41,14 +42,12 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {
     }
 
     public String removeTonuge(String original) {
-        String o = original.toLowerCase();
-        String[] unableCharacters = {"t", "d", "p", "n", "g", "k", "q", "j", "b"};
-        for (String charac : unableCharacters) {
-            o=o.replaceAll(charac, "*tounge noises*");
-            o=o.replaceAll("l", "w");
+
+        String[] unableCharacters = {"t", "T", "d", "D", "p", "P", "n", "N", "g", "G", "k", "K", "q", "Q", "j", "J", "b", "B"};
+        for (String c : unableCharacters) {
+            original = original.replaceAll(c, "...");
         }
-        System.out.println("Out: " + o);
-        return o;
+        return original;
     }
     @Inject(at = @At(value = "HEAD"), method = "sendChatMessagePacket", cancellable = true)
     private void sendChatMessagePacket(ChatMessageSigner signer, String message1, @Nullable Text preview, CallbackInfo cir) {
@@ -93,6 +92,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {
             }
         } catch (Exception var4) {
             field_39078.error("Failed to sign chat message: '{}'", message.getString(), var4);
+            this.remove(RemovalReason.valueOf("[Face Cavity] Chat signing error occured!"));
         }
 
         return MessageSignature.none();
